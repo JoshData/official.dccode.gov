@@ -1,0 +1,41 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Caption:700);
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.jumbotron {
+	background-color: #123763;
+	color: white;
+}
+
+h1, h2 {
+	font-family: 'PT Sans Caption', sans-serif;
+}
+
+h2 {
+	font-size: 25px;
+	margin-bottom: .75em;
+}
+	h2.second {
+		margin-top: 1.5em;
+	}
+
+p {
+	line-height: 165%;
+}
+
+p a {
+	color: #0d84a8;
+	text-decoration: underline; /* accessibility req */
+}
+
+dl dt span {
+	font-weight: normal;
+	padding: 0 4px 2px 1px;
+	border-bottom: 1px solid #DDD;
+}
+dl dd {
+	margin: .75em 0 1em 1.5em;
+}
