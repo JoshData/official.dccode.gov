@@ -2,13 +2,16 @@
 # Run with sudo. But clone the repository in a place that
 # is world-readable so nginx can access the static files.
 
-apt-get install -y openssl
+echo Updating apt index and packages...
+apt-get -q -q update && apt-get -q -q upgrade
 
 # Generated files are readable by root only.
 umask 077
 
 # SSL
 #####
+
+apt-get install -q -y openssl
 
 mkdir -p /etc/ssl/local
 
@@ -48,7 +51,7 @@ fi
 
 # NGINX
 
-apt-get install -y nginx
+apt-get install -q -y nginx
 
 cp conf/nginx.conf /etc/nginx/sites-enabled/default
 cp conf/nginx-ssl.conf /etc/nginx/
@@ -59,3 +62,31 @@ service nginx restart
 # make the public files readable by nginx
 chmod a+x .. . public_html public_html/static
 chmod -R a+r public_html
+
+# GET THE CODE and THE AUDIT REPO and THE EDITOR
+
+apt-get install -q -y nodejs npm
+
+if [ ! -d base-code ]; then
+	git clone https://github.com/JoshData/dc-code-prototype-2 base-code
+fi
+
+if [ ! -d code-audit-log ]; then
+	git clone https://github.com/JoshData/dc-code-audit-log-prototype code-audit-log
+fi
+
+if [ ! -d editor ]; then
+	git clone --recursive https://github.com/JoshData/dc-code-editor editor
+	(cd editor;
+		npm install;
+		ln -s ../base-code/ base_code;
+		ln -s ../code-audit-log audit-repo;
+		)
+fi
+
+# GET SIMPLE-GENERATOR
+
+if [ ! -d simple-generator ]; then
+	git clone https://github.com/openlawdc/simple-generator simple-generator
+	(cd simple-generator; npm install;)
+fi
