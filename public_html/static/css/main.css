@@ -23,6 +23,18 @@
 
 }
 
+@font-face {
+    font-family: 'PT Sans Caption';
+    src: url('../fonts/PTN57F-webfont.eot');
+    src: url('../fonts/PTN57F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/PTN57F-webfont.woff') format('woff'),
+         url('../fonts/PTN57F-webfont.ttf') format('truetype'),
+         url('../fonts/PTN57F-webfont.svg#pt_sans_narrowregular') format('svg');
+    font-weight: lighter;
+    font-style: normal;
+
+}
+
 body {
 	font-family: sans-serif;
 }
@@ -34,6 +46,12 @@ body {
 
 h1, h2 {
 	font-family: 'PT Sans Caption', sans-serif;
+}
+
+h1 .of-the {
+	font-size: 70%;
+	font-weight: lighter;
+	color: #EEF;
 }
 
 h2 {
