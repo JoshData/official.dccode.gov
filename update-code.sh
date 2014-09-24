@@ -29,8 +29,8 @@ fi
 	nodejs make_index ../base-code;
 
 	rm -rf new-current;
+	export TEMPLATE=../code-template.html;
 	nodejs index.js ../base-code/ new-current /current;
-	cp -R css js new-current;
 	)
 
 # Fix permissions. Files must be readable by nginx and directories

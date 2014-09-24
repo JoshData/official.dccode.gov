@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'PT Sans Caption';
+    src: url('../fonts/PTC55F-webfont.eot');
+    src: url('../fonts/PTC55F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/PTC55F-webfont.woff') format('woff'),
+         url('../fonts/PTC55F-webfont.ttf') format('truetype'),
+         url('../fonts/PTC55F-webfont.svg#pt_sans_captionregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'PT Sans Caption';
+    src: url('../fonts/PTC75F-webfont.eot');
+    src: url('../fonts/PTC75F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/PTC75F-webfont.woff') format('woff'),
+         url('../fonts/PTC75F-webfont.ttf') format('truetype'),
+         url('../fonts/PTC75F-webfont.svg#pt_sans_captionbold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'PT Sans Caption';
+    src: url('../fonts/PTN57F-webfont.eot');
+    src: url('../fonts/PTN57F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/PTN57F-webfont.woff') format('woff'),
+         url('../fonts/PTN57F-webfont.ttf') format('truetype'),
+         url('../fonts/PTN57F-webfont.svg#pt_sans_narrowregular') format('svg');
+    font-weight: lighter;
+    font-style: normal;
+
+}
+
+body {
+	font-family: sans-serif;
+}
+
+header {
+	background-color: #123763;
+	color: white;
+}
+
+header h1 {
+	margin: 0;
+	padding: 1em 0;
+	font-family: 'PT Sans Caption', sans-serif;
+	font-size: 16px;
+}
+	header h1 a, header h1 a:hover, header h1 a:visited {
+		color: white;
+	}
+
+	header h1 .of-the {
+		font-size: 70%;
+		font-weight: lighter;
+		color: #EEF;
+	}
+
+#sidebar {
+    padding: 20px 50px 0 0;
+    font-size: 13px;
+}
+	#sidebar h2 {
+	    font-size: 14px;
+	    font-family: 'PT Sans Caption';
+	    margin-top: 2em;
+	    margin-bottom: 1em;
+	}
+	#sidebar ul.ancestors {
+		list-style: none;
+		padding: 0;
+	}
+
+#content {
+    font-size: 16px;
+}
+
+@media (max-width: 780px) {
+    #sidebar {
+        font-size: 11px;
+    }
+    #content {
+        font-size: 14px;
+    }
+}
+
+#content h1 {
+	font-size: 22px;
+}
+
+footer {
+	border-top: 1px solid #CCC;
+	padding-top: 1em;
+}

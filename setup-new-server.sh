@@ -90,3 +90,7 @@ if [ ! -d simple-generator ]; then
 	git clone https://github.com/openlawdc/simple-generator simple-generator
 	(cd simple-generator; npm install;)
 fi
+
+# make it readable by nginx
+chmod a+rx simple-generator/ simple-generator/css/
+chmod a+r simple-generator/css/body.css
