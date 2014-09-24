@@ -33,6 +33,11 @@ fi
 	nodejs index.js ../base-code/ new-current /current;
 	)
 
+# Clear temporary index files so they don't accidentally get committed.
+(cd base-code;
+	rm -rf by_title/ section_{,parents_,children_}index.json;
+	)
+
 # Fix permissions. Files must be readable by nginx and directories
 # executable.
 chmod -R a+r simple-generator/new-current/

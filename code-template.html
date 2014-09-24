@@ -40,6 +40,15 @@
       <div class="row">
         <div class='col-md-4'>
           <div id='sidebar'>
+            <dl id="recency">
+                <dt>Published On</dt>
+                <dd><%- recency_info.publication_date_formatted %></dd>
+
+                <dt>Last Codified Act</dt>
+                <dd><%- recency_info.last_act %><br>
+                    (effective <%- recency_info.last_act_effective_date_formatted %>)</dd>
+            </dl>
+
             <% if (ancestors.length > 0) { %>
                 <h2>You Are Here</h2>
                 <ul class="ancestors">
@@ -60,8 +69,6 @@
                 <p><a href="<%= sibling_next.filename%>"><%- sibling_next.title %></a></p>
             <% } %>
 
-            <h2>Current as of...</h2>
-            <p class="recency"><%- recency_info %></p>
           </div>
         </div>
 
