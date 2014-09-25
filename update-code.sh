@@ -23,6 +23,31 @@ if ! (cd base-code; git checkout -q $TAG;) then
 	exit 3
 fi
 
+# Push the tag. Using --force in case it already exists. Not the best,
+# but we rewrite history in this repository anyway.
+if ! (cd base-code; git push --force origin $TAG:$TAG;) then
+	exit 3
+fi
+
+# Write the latest tag and its hash to a JSON file.
+AUDIT_HASH_ABBREV=$(cd code-audit-log/; git log -n1 --format=format:%h $1)
+TAG_HASH=$(cd base-code/; git log -n1 --format=format:%H $TAG)
+TAG_HASH_ABBREV=$(cd base-code/; git log -n1 --format=format:%h $TAG)
+TAG_DATE=$(cd base-code/; git log -n1 --format=format:%aD $TAG)
+cat > public_html/latest.json <<EOF;
+{
+	"audit_hash": "$1",
+	"audit_hash_abbrev": "$AUDIT_HASH_ABBREV",
+	"tag": "$TAG",
+	"code_hash": "$TAG_HASH",
+	"code_hash_abbrev": "$TAG_HASH_ABBREV",
+	"pub_date": "$TAG_DATE"
+}
+EOF
+
+
+exit
+
 # Run simple-generator on the tag.
 
 (cd simple-generator/;

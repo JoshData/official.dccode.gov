@@ -80,3 +80,7 @@ dl dd {
     dl dd p {
         line-height: 135%;
     }
+
+#latest_pub .code_hash, #latest_pub .audit_hash {
+	font-family: monospace;
+

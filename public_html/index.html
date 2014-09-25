@@ -72,9 +72,15 @@
             <dd>
               <p>In your web browser, ensure you are connected securely to this site by making sure your browser address bar looks like this:</p>
 
-              <div class="padlock"> </div>
+              <div class="padlock" style="margin-bottom: .75em"> </div>
 
-              <p style="margin-top: .7em">Other methods of authentication are in development &mdash; stay tuned.</p>
+              <p id="latest_pub" style="display: none">The latest 
+              publication of the DC Code was on <span class="pub_date"> </span> with 
+              an <a class="audit">audit hash</a> of <span class="audit_hash"> </span> 
+              and <a href="" class="code_tag">code hash</a> of <span class="code_hash">
+              </span>.</p>
+
+              <p>Other methods of authentication are in development &mdash; stay tuned.</p>
             </dd>
           </dl>
         </div>
@@ -96,8 +102,8 @@
           <dl>
             <dt>DC Code in XML</dt>
             <dd>
-              <p>The DC Code is available in XML at <a href="javascript:alert('Link TBD.')">https://github.com/...</a>.</p>
-              <p>The repository above not only shows the current DC Code but also its history. Starting with DC Law ____, each codified law is represented in the repository by a separate git commit. See the README for details.</p>
+              <p>The DC Code is available in XML at <a class="code_tag" href="javascript:alert('Link TBD.')">https://github.com/...</a>.</p>
+              <p>The repository above not only shows the current DC Code but also its history. Starting with DC Law ____, each codified law is represented in the repository by a separate git commit. See the README for details. Use <a href="/latest.json">latest.json</a> to deterimine which tag is current.</p>
               <p>We use the open source project <a href="https://github.com/openlawdc/simple-generator">simple-generator</a> to turn the XML into the static HTML that appears at <a href="/current">/current</a> here.</p>
             </dd>
 
@@ -150,9 +156,23 @@
         <script src="static/bootstrap/js/bootstrap.min.js"></script>
 
         <script src="static/js/main.js"></script>
+
+	<script>
+	$(function() {
+		$.getJSON('/latest.json', function(latest) {
+			$('#latest_pub').show();
+			$('#latest_pub').find('.pub_date').text(latest.pub_date);
+			$('#latest_pub').find('.audit_hash').text(latest.audit_hash_abbrev);
+			$('#latest_pub').find('a.audit').attr('href', "https://github.com/JoshData/dc-code-audit-log-prototype/commit/" + latest.audit_hash);
+			$('#latest_pub').find('.code_hash').text(latest.code_hash_abbrev);
+			$('a.code_tag').attr('href', "https://github.com/JoshData/dc-code-prototype-2/tree/" + latest.tag);
+		});
+	})
+	</script>
     
         <script src="/static/browser-padlock/bowser.min.js"> </script> <!-- optional-ish -->
         <script src="/static/browser-padlock/padlock.js"> </script>
         <script>$('.padlock').padlock();</script>
+	
     </body>
 </html>

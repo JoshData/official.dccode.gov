@@ -3,4 +3,4 @@
 
 cd simple-generator/
 export TEMPLATE=../code-template.html
-nodejs index.js ../base-code ../public_html/current /current ^../base-code/index.xml
+nodejs index.js ../base-code ../public_html/current /current "^../base-code/index.xml|^../base-code/Title-1/Chapter-1/index.xml"

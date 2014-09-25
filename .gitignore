@@ -2,4 +2,5 @@ base-code
 code-audit-log
 editor
 public_html/current
+public_html/latest.json
 simple-generator
