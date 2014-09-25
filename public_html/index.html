@@ -21,6 +21,7 @@
         <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="static/bootstrap/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="static/css/main.css">
+        <link rel="stylesheet" href="static/browser-padlock/padlock.css">
 
         <script src="static/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
@@ -57,22 +58,24 @@
           <p>Pursuant to the Uniform Electronic Legal Material Act (UELMA), the official DC Code satisfies three key requirements of open law:</p>
 
           <dl style="margin-top: 1.5em">
-            <dt><span>Public Access</span></dt>
+            <dt>Public Access</dt>
             <dd>
               <p>This website provides public access to the DC Code in a modern, searchable, and open format.</p>
             </dd>
 
-            <dt><span>Preservation</span></dt>
+            <dt>Preservation</dt>
             <dd>
               <p>...</p>
             </dd>
 
-            <dt><span>Authenticity</span></dt>
+            <dt>Authenticity</dt>
             <dd>
-              <p>The DC Code uses modern methods for assuring that what you see is the law as published by the Council. How can you tell that the Code is law as published?</p>
-              <ol>
-                <li>Look in your browser&rsquo;s security area for a green lock.</li>
-              </ol>
+              <p>We use modern methods for assuring that what you see is the law as published by the Council.</p>
+
+              <p>In your web browser, ensure you are connected securely to this site by making sure your browser address bar looks like this:</p>
+
+              <div class="padlock"> </div>
+
             </dd>
           </dl>
         </div>
@@ -92,19 +95,19 @@
           <p>The DC Code is made available in an open electronic data format to encourage software developers and legal publishers to build other modern tools for promoting public and equitable access to the District&rsquo;s laws.</p>
 
           <dl>
-            <dt><span>DC Code in XML</span></dt>
+            <dt>DC Code in XML</dt>
             <dd>
               <p>The DC Code is available in XML at <a href="javascript:alert('Link TBD.')">https://github.com/...</a>.</p>
               <p>The repository above not only shows the current DC Code but also its history. Starting with DC Law ____, each codified law is represented in the repository by a separate git commit. See the README for details.</p>
             </dd>
 
-            <dt><span>Electronic Code Update Chart</span></dt>
+            <dt>Electronic Code Update Chart</dt>
             <dd>
               <p>The electronic code update chart is a machine-readable set of instructions for how the DC Code has been updated by each codified act. Access the electronic code update chart at <a href="javascript:alert('Link TBD.')">https://github.com/...</a>.</p>
               <p>The update chart repository also acts as a public audit log for all changes to the DC Code. Each change to the DC Code is recorded in the code update chart in perpetuity.</p>
             </dd>
 
-            <dt><span>Public Domain Dedication</span></dt>
+            <dt>Public Domain Dedication</dt>
             <dd>Although laws are not subject to U.S. federal copyright protections, for the avoidance of doubt we additionally dedicate the DC Code XML to the world-wide public domain through <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode">CC0 1.0 Universal</a>.</dd>
           </dl>
 
@@ -147,5 +150,9 @@
         <script src="static/bootstrap/js/bootstrap.min.js"></script>
 
         <script src="static/js/main.js"></script>
+    
+        <script src="/static/browser-padlock/bowser.min.js"> </script> <!-- optional-ish -->
+        <script src="/static/browser-padlock/padlock.js"> </script>
+        <script>$('.padlock').padlock();</script>
     </body>
 </html>

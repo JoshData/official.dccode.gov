@@ -71,11 +71,12 @@ p a {
 	text-decoration: underline; /* accessibility req */
 }
 
-dl dt span {
-	font-weight: normal;
-	padding: 0 4px 2px 1px;
-	border-bottom: 1px solid #DDD;
+dl dt {
+    font-family: 'PT Sans Caption', sans-serif;
 }
 dl dd {
 	margin: .75em 0 1em 1.5em;
 }
+    dl dd p {
+        line-height: 135%;
+    }
