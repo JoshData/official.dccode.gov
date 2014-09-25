@@ -45,9 +45,6 @@ cat > public_html/latest.json <<EOF;
 }
 EOF
 
-
-exit
-
 # Run simple-generator on the tag.
 
 (cd simple-generator/;
