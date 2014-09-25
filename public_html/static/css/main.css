@@ -75,7 +75,7 @@ dl dt {
     font-family: 'PT Sans Caption', sans-serif;
 }
 dl dd {
-	margin: .75em 0 1em 1.5em;
+	margin: .5em 0 1.2em 0;
 }
     dl dd p {
         line-height: 135%;
