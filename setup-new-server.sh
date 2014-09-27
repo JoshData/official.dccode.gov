@@ -2,6 +2,10 @@
 # Run with sudo. But clone the repository in a place that
 # is world-readable so nginx can access the static files.
 
+# Get externals.
+git submodule update --init
+
+# Update system.
 echo Updating apt index and packages...
 apt-get -q -q update && apt-get -q -q upgrade
 

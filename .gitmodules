@@ -1,0 +1,3 @@
+[submodule "ext/browser-padlock-guide"]
+	path = ext/browser-padlock-guide
+	url = https://github.com/JoshData/browser-padlock-guide
