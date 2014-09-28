@@ -98,3 +98,15 @@ fi
 # make it readable by nginx
 chmod a+rx simple-generator/ simple-generator/css/
 chmod a+r simple-generator/css/body.css
+
+# HOME RULE ACT
+# apt-get install libxml2-utils # if you want to re-build the xml
+mkdir public_html/home-rule-act;
+(
+	cd simple-generator;
+	nodejs make_index.js ../ext/home-rule-act
+	export DOCTYPE=homeruleact;
+	export TEMPLATE=../code-template.html;
+        nodejs index.js ../ext/home-rule-act ../public_html/home-rule-act home-rule-act ../ext/home-rule-act/index.xml;
+)
+chown -R www-data.www-data public_html/home-rule-act

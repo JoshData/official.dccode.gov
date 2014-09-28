@@ -44,9 +44,11 @@
                 <dt>Published On</dt>
                 <dd><%- recency_info.publication_date_formatted %></dd>
 
+                <% if (doctype != 'homeruleact') { %>
                 <dt>Last Codified Act</dt>
-                <dd><%- recency_info.last_act %><br>
-                    (effective <%- recency_info.last_act_effective_date_formatted %>)</dd>
+       	        <dd><%- recency_info.last_act %><br>
+               	    (effective <%- recency_info.last_act_effective_date_formatted %>)</dd>
+                <% } %>
             </dl>
 
             <% if (ancestors.length > 0) { %>

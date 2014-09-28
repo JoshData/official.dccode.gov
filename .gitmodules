@@ -1,3 +1,6 @@
 [submodule "ext/browser-padlock-guide"]
 	path = ext/browser-padlock-guide
 	url = https://github.com/JoshData/browser-padlock-guide
+[submodule "ext/home-rule-act"]
+	path = ext/home-rule-act
+	url = https://github.com/openlawdc/home-rule-act
