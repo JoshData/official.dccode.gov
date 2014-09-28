@@ -51,6 +51,7 @@ EOF
 	nodejs make_index ../base-code;
 
 	rm -rf new-current;
+	mkdir new-current;
 	export TEMPLATE=../code-template.html;
 	nodejs index.js ../base-code/ new-current /current;
 	)
@@ -67,6 +68,7 @@ find simple-generator/new-current/ -type d | xargs chmod a+x
 
 # Swap the 'current' directory with the new files.
 
+mkdir -p public_html/current # so next statement doesn't complain
 mv public_html/current old-current
 mv simple-generator/new-current/ public_html/current
 rm -rf old-current
