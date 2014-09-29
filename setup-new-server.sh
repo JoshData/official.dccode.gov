@@ -88,14 +88,12 @@ if [ ! -d editor ]; then
 		)
 fi
 
-# GET SIMPLE-GENERATOR
+# SIMPLE-GENERATOR
 
-if [ ! -d simple-generator ]; then
-	git clone https://github.com/openlawdc/simple-generator simple-generator
-	(cd simple-generator; npm install;)
-fi
+# install dependencies
+(cd simple-generator; npm install;)
 
-# make it readable by nginx
+# make stylesheet readable by nginx
 chmod a+rx simple-generator/ simple-generator/css/
 chmod a+r simple-generator/css/body.css
 

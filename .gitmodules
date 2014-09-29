@@ -4,3 +4,6 @@
 [submodule "ext/home-rule-act"]
 	path = ext/home-rule-act
 	url = https://github.com/openlawdc/home-rule-act
+[submodule "simple-generator"]
+	path = simple-generator
+	url = https://github.com/openlawdc/simple-generator
